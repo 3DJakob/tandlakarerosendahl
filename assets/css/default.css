@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F1F1F1;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+.viewport {
+    width: calc(100vw - 40px);
+    max-width: 1700px;
+}
+
+h1, h2, h3, p, a, footer {
+    font-family: 'Raleway', sans-serif;
+    color: #014155;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 50px;
+}
+
+.card h1 {
+    margin-top: 0;
+    margin: 5px 0;
+}
+
+.card .footer {
+    margin: 0;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+.card .footer {
+    text-align: center;
+}
+
+
+
+
+
+footer {
+  color: #014155;
+  font-size: 12px;
+  padding: 10px 20px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
