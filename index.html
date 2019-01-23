@@ -90,20 +90,34 @@
           <div class="form">
             <h1>Kontakt</h1>
             <div class="row">
-              <input type="text" name="" id="">
-              <input type="email">
+              <input type="text" placeholder="Namn" autocomplete="name" id="name">
+              <div class="divider"></div>
+              <input type="digits" placeholder="Telefon" autocomplete="tel" id="phone">
             </div>
-            <textarea name="" id="" cols="30" rows="1"></textarea>
+            <textarea cols="30" rows="7" placeholder="Meddelande" id="msg"></textarea>
+            <a onclick="sendEmail()" class="button blue">Skicka</a>
           </div>
           <div>
             <a href="">021-41 96 40</a>
             <a href="">rosendahl@telia.se</a>
-            <p>Vi försöker alltid svara i telefon. Ring helst, då vi inte alltid har tid att läsa mailen.</p>
-
+            <p class="italics">Vi försöker alltid svara i telefon. Ring helst, då vi inte alltid har tid att läsa mailen.</p>
             <a href="">070 247 95 30</a>
             <p>Jour under helgdagar kl 9.00-11.00</p>
           </div>
         </div>
+
+        <div class="row where">
+            <div class="card">
+                <h1>Här finns vi!</h1>
+                <p>Stora Gatan 41</p>
+                <p>Våning 2</p>
+                <p class="italics">Ingen portkod krävs</p>
+            </div>
+            <div class="card">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2018.4597566924574!2d16.539867816651924!3d59.60870778175749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465e613fa1b6c2af%3A0x8fdf185062f83582!2sA+Rosendahl+Tandl%C3%A4kare+AB!5e0!3m2!1ssv!2sse!4v1548247963926" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <footer>
             <p>
                 Hemsidan presenteras med ❤️ av Unga Utvecklare

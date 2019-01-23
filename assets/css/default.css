@@ -21,6 +21,10 @@ h1, h2, h3, p, a, footer {
     color: #014155;
 }
 
+.divider {
+    width: 20px;
+}
+
 .row {
     flex-direction: row;
 }
@@ -48,19 +52,8 @@ h1, h2, h3, p, a, footer {
     text-align: center;
 }
 
-
-
-
-
-footer {
-  color: #014155;
-  font-size: 12px;
-  padding: 10px 20px;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+input {
+    flex: 1;
 }
 
 input, textarea {
@@ -70,12 +63,45 @@ input, textarea {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
 
+input {
   border-bottom: #014155 1px solid;
   padding: 7px;
   color: #014155;
+  margin: 10px 0;
 }
 
 textarea {
-
+  background-color: #fff;
+  width: calc(100% - 20px);
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 0px solid #fff;
 }
+
+.italics {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.button {
+    background-color: #084658;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 3px;
+    min-width: 100px;
+    text-align: center;
+}
+
+footer {
+    color: #014155;
+    font-size: 12px;
+    padding: 10px 20px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }

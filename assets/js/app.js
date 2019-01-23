@@ -33,3 +33,17 @@ const renderDates = () => {
     const targets = document.querySelectorAll('.openingHours')
     targets.forEach(target => { renderDate(target) })
 }
+
+const sendEmail = () => {
+  const name = document.querySelector('#name').value
+  const phone = document.querySelector('#phone').value
+  const msg = document.querySelector('#msg').value
+  let endString = ''
+  if (name) {
+    endString = 'Med vänliga hälsningar ' + name
+    if (phone) {
+      endString += ' ' + phone
+    }
+  }
+  window.location.href = 'mailto:rosendahl@telia.se?subject=' + '' + '&body=' + msg + '%0D%0A %0D%0A' + endString
+}

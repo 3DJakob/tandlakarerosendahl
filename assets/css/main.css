@@ -20,7 +20,7 @@ nav a {
     padding: 0 20px;
     text-decoration: none;
     transition: 200ms;
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #F1F1F1;
 }
 
 nav a:hover {
@@ -116,6 +116,63 @@ nav a:hover {
 }
 
 .gradient .brag img {
-    height: 70px;
+    height: 150px;
 }
 
+.contact {
+    max-width: 1200px;
+    width: 100%;
+    align-self: center;
+    flex-shrink: 0;
+    margin: 50px 0;
+}
+
+.contact > div {
+    width: 50%;
+    padding: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact .button {
+    margin-top: 20px;
+}
+
+.contact textarea {
+
+}
+
+.contact .row {
+    width: 100%;
+}
+
+.contact div:last-of-type {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.contact div:last-of-type a {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.contact div:last-of-type p.italics {
+    margin: 10px;
+    margin-bottom: 25px;
+    max-width: 330px;
+}
+
+.where div:first-of-type {
+    flex: 0;
+    min-width: 200px;
+}
+
+.where div:last-of-type {
+    padding: 0;
+}
+
+.where iframe {
+    height: 100%;
+    width: 100%;
+    min-height: 500px;
+}
