@@ -64,7 +64,6 @@ function guid () {
 }
 
 const setSlideshowAspect = (slideshow, aspect) => {
-    console.log(aspect)
   slideshow.style.height = slideshow.offsetWidth / aspect + 'px'
 }
 
