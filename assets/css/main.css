@@ -6,8 +6,9 @@ nav {
 }
 
 nav img {
-    height: 50px;
-    width: 50px;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
     position: absolute;
     left: 0;
 }
@@ -46,6 +47,10 @@ nav a:hover {
     position: absolute;
     left: 50%;
     top: 30%;
+}
+
+.intro .bg .textBox :first-child {
+    margin-bottom: 0;
 }
 
 
