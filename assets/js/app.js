@@ -1,38 +1,57 @@
 const init = () => {
-    renderDates()
-    initiateSlideshows()
+  renderDates()
+  initiateSlideshows()
+  window.addEventListener('resize', function (event) {
+    resize()
+  })
+}
+
+const resize = () => {
+  const slideshows = document.querySelectorAll('.slideshow')
+
+  slideshows.forEach(slideshow => {
+    const width = slideshow.offsetWidth
+    setSlideshowAspect(slideshow, (16 / 9))
+    const slider = slideshow.children[0]
+    const children = [].slice.call(slider.children)
+
+    slider.style.width = width * children.length + 'px'
+    children.forEach(child => {
+      child.style.width = width + 'px'
+    })
+  })
 }
 
 const renderDates = () => {
-    const dates = [
-      { day: 'Måndag', from: '8:00', to: '17:00' },
-      { day: 'Tisdag', from: '8:00', to: '16:00' },
-      { day: 'Onsdag', from: '8:00', to: '16:00' },
-      { day: 'Torsdag', from: '8:00', to: '12:00' },
-      { day: 'Fredag', from: '8:00', to: '12:00' }
-    ]
-  
-    const today = new Date().getDay() - 1
-  
-    const renderDate = (target) => {
-      for (let i = 0; i < dates.length; i++) {
-        const date = dates[i]
-        const element = document.createElement('p')
-        if (date.from === '') {
-          element.textContent = date.day + ': stängt'
-        } else {
-          element.textContent = date.day + ': ' + date.from + '-' + date.to
-        }
-        if (i === today) {
-          element.style.backgroundColor = '#668198'
-          element.style.color = '#fff'
-        }
-        target.appendChild(element)
+  const dates = [
+    { day: 'Måndag', from: '8:00', to: '17:00' },
+    { day: 'Tisdag', from: '8:00', to: '16:00' },
+    { day: 'Onsdag', from: '8:00', to: '16:00' },
+    { day: 'Torsdag', from: '8:00', to: '12:00' },
+    { day: 'Fredag', from: '8:00', to: '12:00' }
+  ]
+
+  const today = new Date().getDay() - 1
+
+  const renderDate = (target) => {
+    for (let i = 0; i < dates.length; i++) {
+      const date = dates[i]
+      const element = document.createElement('p')
+      if (date.from === '') {
+        element.textContent = date.day + ': stängt'
+      } else {
+        element.textContent = date.day + ': ' + date.from + '-' + date.to
       }
+      if (i === today) {
+        element.style.backgroundColor = '#668198'
+        element.style.color = '#fff'
+      }
+      target.appendChild(element)
     }
-  
-    const targets = document.querySelectorAll('.openingHours')
-    targets.forEach(target => { renderDate(target) })
+  }
+
+  const targets = document.querySelectorAll('.openingHours')
+  targets.forEach(target => { renderDate(target) })
 }
 
 function guid () {
@@ -42,6 +61,11 @@ function guid () {
       .substring(1)
   }
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
+}
+
+const setSlideshowAspect = (slideshow, aspect) => {
+    console.log(aspect)
+  slideshow.style.height = slideshow.offsetWidth / aspect + 'px'
 }
 
 const initiateSlideshows = () => {
@@ -54,7 +78,6 @@ const initiateSlideshows = () => {
       width += 1
       node.style.backgroundImage = 'url(' + node.dataset.image + ')'
       node.style.width = parentWidth + 'px'
-      
     })
     slider.style.width = parentWidth * width + 'px'
   }
@@ -62,7 +85,6 @@ const initiateSlideshows = () => {
   const populateButtons = (slideshow) => {
     const container = document.createElement('div')
     container.classList.add('dotContainer')
-    container.style.width = parentWidth + 'px'
     const id = guid()
     for (let i = 0; i < slideshow.children[0].children.length; i++) {
       const bullet = document.createElement('input')
@@ -81,6 +103,7 @@ const initiateSlideshows = () => {
 
   const slideshows = document.querySelectorAll('.slideshow')
   slideshows.forEach((slideshow) => {
+    setSlideshowAspect(slideshow, (16 / 9))
     populateSlideshow(slideshow)
     populateButtons(slideshow)
   })
@@ -88,7 +111,10 @@ const initiateSlideshows = () => {
 }
 
 const goToSlide = (slideshow, number) => {
-  slideshow.children[0].style.transform = 'translateX(' + -number * slideshow.children[0].children[0].scrollWidth + 'px)'
+  const width = slideshow.offsetWidth
+  const fullWidth = width * slideshow.children[0].children.length
+
+  slideshow.children[0].style.transform = 'translateX(' + -(number * width / fullWidth) * 100 + '%)'
 }
 
 const repeatSlideshows = (slideshows) => {
