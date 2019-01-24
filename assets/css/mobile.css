@@ -13,6 +13,10 @@
         background: linear-gradient(to top, rgba(241,241,241,1) 0%,rgba(241,241,241,0) 100%); 
     }
 
+    .intro .bg .textBox h1 {
+        font-size: 22px;
+    }
+
     .row {
         flex-direction: column;
     }
@@ -28,6 +32,7 @@
 
     .contact > div {
         width: auto;
+        padding: 0 20px;
     }
 
     #pris {
