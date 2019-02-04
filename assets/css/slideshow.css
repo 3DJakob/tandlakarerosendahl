@@ -22,7 +22,7 @@
 
 .slideshow .dotContainer {
     position: absolute;
-    bottom: 50px;
+    bottom: 15px;
     justify-content: center;
     flex-direction: row;
     width: 100%;
