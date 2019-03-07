@@ -24,11 +24,11 @@ const resize = () => {
 
 const renderDates = () => {
   const dates = [
-    { day: 'Måndag', from: '9:00', to: '17:30' },
-    { day: 'Tisdag', from: '7:30', to: '11:00' },
-    { day: 'Onsdag', from: '9:00', to: '17:30' },
-    { day: 'Torsdag', from: '7:30', to: '11:00' },
-    { day: 'Fredag', from: '', to: '' }
+    { day: 'Måndag', from: '8:00', to: '17:00' },
+    { day: 'Tisdag', from: '8:00', to: '16:00' },
+    { day: 'Onsdag', from: '8:00', to: '12:00' },
+    { day: 'Torsdag', from: '8:00', to: '16:00' },
+    { day: 'Fredag', from: '8:00', to: '12:00' }
   ]
 
   const today = new Date().getDay() - 1
