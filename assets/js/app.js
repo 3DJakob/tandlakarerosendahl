@@ -144,5 +144,5 @@ const sendEmail = () => {
       endString += ' ' + phone
     }
   }
-  window.location.href = 'mailto:rosendahl@telia.se?subject=' + '' + '&body=' + msg + '%0D%0A %0D%0A' + endString
+  window.location.href = 'mailto:tandlakare.rosendahl@telia.com?subject=' + '' + '&body=' + msg + '%0D%0A %0D%0A' + endString
 }
